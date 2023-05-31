@@ -1,0 +1,105 @@
+<script type="text/javascript">
+  App.nodes.registerType('AdvancedLogger', {
+    category: 'logging',
+    color: '#000000',
+    defaults: {
+      name: { value: 'AdvancedLogger', required: true },
+      message: { value: '', templateable: true, required: false },
+      data: { value: '', templateable: true, required: false  },
+      environment: { value: '', templateable: true,required: false  },
+      servicename: { value: '', templateable: true,required: false  },
+      meta: { value: '', templateable: true,required: false  },
+      types: { value: 'LOG',required: false },
+      level: { value: 'INFO',required: false },
+      ctxnid: { value: '', templateable: true,required: false }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'kumo_advlog.png',
+    label: function () {
+      return this.name || 'AdvancedLogger';
+    },
+  });
+</script>
+
+<script type="text/x-kumologica" data-template-name="AdvancedLogger">
+    <div class="kumo-window">
+
+      <!-- Display name -->
+      <div class="kumo-section">
+        <div class="kumo-row">
+            <label class="kumo-row-label" for="node-input-name">Display Name</label>
+            <input class="kumo-row-editable" type="text" id="node-input-name" placeholder="Node Name">
+        </div>
+      </div>
+      
+      <!-- General section -->
+      <div class="kumo-section-title">General</div>
+        <div class="kumo-section">
+
+          <div class="kumo-row" id='message'>
+            <div class="kumo-row-with-margin">
+              <label class="kumo-row-label" for="node-input-message">Message</label>
+              <input class="kumo-row-editable" type="text" id="node-input-message" placeholder="Summary about the data">
+            </div>
+          </div>
+          <div class="kumo-row" id='data'>
+            <div class="kumo-row-with-margin" >
+              <label class="kumo-row-label" for="node-input-data">Data</label>
+              <input class="kumo-row-editable" type="text" id="node-input-data" placeholder="Data that is logged to the console">
+            </div>
+          </div>
+          <div class="form-row" id="level">
+            <label class="kumo-row-label" for="node-input-level">Level</label>
+            <select class="kumo-row-editable" type="text" id="node-input-level">
+              <option value="ERROR">ERROR</option>
+              <option value="WARN">WARN</option>
+              <option value="INFO">INFO</option>
+              <option value="DEBUG">DEBUG</option>
+              <option value="TRACE">TRACE</option>
+            </select>
+          </div>
+          <div class="form-row" id="types">
+            <label class="kumo-row-label" for="node-input-types">Type</label>
+            <select class="kumo-row-editable" type="text" id="node-input-types">
+              <option value="service-in">SERVICE-IN</option>
+              <option value="service-out">SERVICE-OUT</option>
+              <option value="downstream-in">DOWNSTREAM-IN</option>
+              <option value="downstream-out">DOWNSTREAM-OUT</option>
+              <option value="log">LOG</option>
+              <option value="error">ERROR</option>
+            </select>
+          </div>
+          <div class="kumo-row" id='environment'>
+            <div class="kumo-row-with-margin" >
+              <label class="kumo-row-label" for="node-input-environment">Environment</label>
+              <input class="kumo-row-editable" type="text" id="node-input-environment" placeholder="Environment in which service is running">
+            </div>
+          </div>
+          <div class="kumo-row" id='servicename'>
+            <div class="kumo-row-with-margin" >
+              <label class="kumo-row-label" for="node-input-servicename">Service Name</label>
+              <input class="kumo-row-editable" type="text" id="node-input-servicename" placeholder="Name of the service">
+            </div>
+          </div>
+          <div class="kumo-row" id='ctxnid'>
+            <div class="kumo-row-with-margin" >
+              <label class="kumo-row-label" for="node-input-ctxnid">Custom TxnId</label>
+              <input class="kumo-row-editable" type="text" id="node-input-ctxnid" placeholder="Custom transaction Id">
+            </div>
+          </div>
+          <div class="kumo-row" id='meta'>
+            <div class="kumo-row-with-margin" >
+              <label class="kumo-row-label" for="node-input-meta">Meta</label>
+              <input class="kumo-row-editable" type="text" id="node-input-meta" placeholder="Additional infomration to be logged">
+            </div>
+          </div>
+
+      </div>
+      
+    </div>
+
+</script>
+
+<script type="text/x-kumologica" data-help-name="AdvancedLogger">
+</script>

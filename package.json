@@ -1,0 +1,28 @@
+{
+  "name": "@ab73863/kumologica-contrib-advancedlogger",
+  "version": "0.0.1",
+  "description": "Advacned logger node that supports structured logging in easy way.",
+  "author": "Arun kumar",
+  "main": "lib/AdvancedLogger.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ab73863/kumologica-contrib-advancedlogger.git"
+  },
+  "license": "Copyright",
+  "keywords": [
+    "kumologica",
+    "logging",
+    "advancedlogger"
+  ],
+  "scripts": {
+    "pub": "npm publish --access public"
+  },
+  "dependencies": {
+    "@kumologica/devkit": "latest"
+  },
+  "kumologica": {
+    "nodes": {
+      "AdvancedLogger": "lib/AdvancedLogger.js"
+    }
+  }
+}
