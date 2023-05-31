@@ -1,6 +1,6 @@
 {
   "name": "@ab73863/kumologica-contrib-advancedlogger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Advacned logger node that supports structured logging in easy way.",
   "author": "Arun kumar",
   "main": "lib/AdvancedLogger.js",
